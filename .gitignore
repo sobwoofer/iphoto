@@ -1,0 +1,17 @@
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+/.idea
+/.vagrant
+npm-debug.log
+storage/api-docs
+docker-compose.override.yml
+.env
+docker-compose.env
+docker/volumes/*
+*.bak
+_ide_helper.php
+.phpstorm.meta.php
+/storage/logs/
