@@ -13,8 +13,8 @@ return [
         ]
     ],
     "auth" => [
-        "login_attribute" => "login",
-        "password_attribute" => "pwd",
+        "login_attribute" => "email",
+        "password_attribute" => "password",
         "display_attribute" => "name",
     ]
 ];
