@@ -2,7 +2,7 @@
 
 namespace App\Eloquent;
 
-use Illuminate\Database\Eloquent\Model;
+use Eloquent;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int $tag_id
  * @property int $post_id
  */
-class PhotoTag extends Model
+class PhotoTag extends Eloquent
 {
     protected $table = 'photo_tag';
 

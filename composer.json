@@ -9,8 +9,10 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
-        "code16/sharp": "^4.2",
+        "code16/sharp": "^5.0",
+        "erusev/parsedown": "^1.7",
         "fideloper/proxy": "^4.0",
+        "intervention/image": "^2.5",
         "laravel/framework": "^6.2",
         "laravel/tinker": "^2.0"
     },
@@ -26,6 +28,12 @@
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true
+    },
+    "repositories": {
+        "parsedown": {
+            "type": "vcs",
+            "url": "git@github.com:parsedown/parsedown.git"
+        }
     },
     "extra": {
         "laravel": {
@@ -51,6 +59,7 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan vendor:publish --provider=Code16\\Sharp\\SharpServiceProvider --tag=assets --force",
             "@php artisan package:discover --ansi"
         ],
         "post-root-package-install": [
@@ -59,7 +68,8 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi",
             "@php artisan ide-helper:generate",
-            "php artisan ide-helper:meta"
+            "php artisan ide-helper:meta",
+            "php artisan storage:link"
         ]
     }
 }

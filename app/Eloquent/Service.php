@@ -2,7 +2,7 @@
 
 namespace App\Eloquent;
 
-use Illuminate\Database\Eloquent\Model;
+use Eloquent;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property string $created_at
  * @property string $updated_at
  */
-class Service extends Model
+class Service extends Eloquent
 {
     protected $table = 'service';
     protected $fillable = ['title', 'image', 'description', 'price'];
@@ -27,5 +27,11 @@ class Service extends Model
     public function service(): HasMany
     {
         return $this->hasMany(Order::class);
+    }
+
+    public function cover()
+    {
+        return $this->morphOne(Media::class, 'model')
+            ->where('model_key', 'cover');
     }
 }

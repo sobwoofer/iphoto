@@ -2,10 +2,10 @@
 
 namespace App\Eloquent;
 
-use Illuminate\Database\Eloquent\Model;
+use Eloquent;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class PostTag extends Model
+class PostTag extends Eloquent
 {
     protected $table = 'post_tag';
 

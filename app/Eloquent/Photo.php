@@ -2,7 +2,7 @@
 
 namespace App\Eloquent;
 
-use Illuminate\Database\Eloquent\Model;
+use Eloquent;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 /**
@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Relations\HasManyThrough;
  * @property string $created_at
  * @property string $updated_at
  */
-class Photo extends Model
+class Photo extends Eloquent
 {
     protected $table = 'photo';
     protected $fillable = ['image', 'title'];

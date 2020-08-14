@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Policies;
+namespace App\Sharp\Policies;
 
-use App\Post;
+use App\Eloquent\Post;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 

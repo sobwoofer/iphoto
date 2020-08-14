@@ -2,7 +2,7 @@
 
 namespace App\Eloquent;
 
-use Illuminate\Database\Eloquent\Model;
+use Eloquent;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 /**
@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Relations\HasManyThrough;
  * @property string $created_at
  * @property string $updated_at
  */
-class Post extends Model
+class Post extends Eloquent
 {
     protected $table = 'post';
     protected $fillable = ['title', 'image', 'description'];
@@ -25,7 +25,24 @@ class Post extends Model
      */
     public function tags(): HasManyThrough
     {
-        return $this->hasManyThrough(Tag::class,PostTag::class);
+        return $this->hasManyThrough(
+            Tag::class,
+            PostTag::class,
+            'tag_id',
+            'id',
+            'post_id',
+            'tag_id'
+        );
+    }
+
+    public function cover()
+    {
+        return $this->morphOne(Media::class, 'model')->where('model_key', 'cover');
+    }
+
+    public function getDefaultAttributesFor($attribute): array
+    {
+        return $attribute === 'cover' ? ['model_key' => $attribute] : [];
     }
 
 }

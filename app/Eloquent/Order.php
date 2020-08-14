@@ -2,7 +2,7 @@
 
 namespace App\Eloquent;
 
-use Illuminate\Database\Eloquent\Model;
+use Eloquent;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
@@ -19,7 +19,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property string $created_at
  * @property string $updated_at
  */
-class Order extends Model
+class Order extends Eloquent
 {
     protected $table = 'order';
     protected $fillable = ['first_name', 'phone', 'email', 'message', 'service_name', 'price'];

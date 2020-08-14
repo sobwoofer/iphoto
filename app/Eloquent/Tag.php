@@ -2,7 +2,7 @@
 
 namespace App\Eloquent;
 
-use Illuminate\Database\Eloquent\Model;
+use Eloquent;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Relations\HasManyThrough;
  * @property string $created_at
  * @property string $updated_at
  */
-class Tag extends Model
+class Tag extends Eloquent
 {
     protected $table = 'tag';
     protected $fillable = ['tag', 'label'];

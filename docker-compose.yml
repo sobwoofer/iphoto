@@ -20,7 +20,7 @@ services:
       REDIS_PORT: "6379"
       REDIS_HOST: "redis"
       PHP_IDE_CONFIG: "serverName=docker"
-      XDEBUG_CONFIG: "remote_port=9003 remote_host=172.17.0.1 remote_enable=1"
+      XDEBUG_CONFIG: "remote_port=9000 remote_host=172.17.0.1 remote_enable=1"
   php-cli:
     build:
       context: ./
@@ -36,7 +36,7 @@ services:
       REDIS_HOST: "redis"
       ELASTICSEARCH_HOSTS: "elasticsearch:9200"
       PHP_IDE_CONFIG: "serverName=docker"
-      XDEBUG_CONFIG: "remote_port=9003 remote_host=172.17.0.1 remote_enable=1"
+      XDEBUG_CONFIG: "remote_port=9000 remote_host=172.17.0.1 remote_enable=1"
     tty: true
   mysql:
     image: mysql:5.7
