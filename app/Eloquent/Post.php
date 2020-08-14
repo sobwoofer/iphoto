@@ -3,6 +3,7 @@
 namespace App\Eloquent;
 
 use Eloquent;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 /**
@@ -23,16 +24,9 @@ class Post extends Eloquent
     /**
      * @return HasManyThrough
      */
-    public function tags(): HasManyThrough
+    public function tags(): BelongsToMany
     {
-        return $this->hasManyThrough(
-            Tag::class,
-            PostTag::class,
-            'tag_id',
-            'id',
-            'post_id',
-            'tag_id'
-        );
+        return $this->belongsToMany(Tag::class);
     }
 
     public function cover()

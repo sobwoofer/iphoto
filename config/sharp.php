@@ -17,6 +17,10 @@ return [
             'show' => \App\Sharp\Post\ShowPost::class,
 //            'validator' => \App\Sharp\SpaceshipSharpValidator::class,
 //            'policy' => \App\Sharp\Policies\SpaceshipPolicy::class
+        ],
+        'post_tag' => [
+            'list' => \App\Sharp\EmbeddedEntityLists\ListPostTag::class,
+            'form' => \App\Sharp\Tag\FormTag::class,
         ]
     ],
     'auth' => [
