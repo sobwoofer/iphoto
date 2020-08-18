@@ -22,7 +22,7 @@ class Post extends Eloquent
     protected $fillable = ['title', 'image', 'description'];
 
     /**
-     * @return HasManyThrough
+     * @return BelongsToMany
      */
     public function tags(): BelongsToMany
     {
