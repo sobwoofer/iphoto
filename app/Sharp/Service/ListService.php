@@ -3,9 +3,12 @@
 namespace App\Sharp\Service;
 
 use App\Eloquent\Service;
+use App\Sharp\Filters\TagServiceFilter;
 use Code16\Sharp\EntityList\Containers\EntityListDataContainer;
+use Code16\Sharp\EntityList\Eloquent\Transformers\SharpUploadModelAttributeTransformer;
 use Code16\Sharp\EntityList\EntityListQueryParams;
 use Code16\Sharp\EntityList\SharpEntityList;
+use Code16\Sharp\Utils\LinkToEntity;
 
 class ListService extends SharpEntityList
 {
@@ -17,10 +20,27 @@ class ListService extends SharpEntityList
     public function buildListDataContainers()
     {
         $this->addDataContainer(
-            EntityListDataContainer::make('name')
-                ->setLabel('Name')
+            EntityListDataContainer::make('id')
+                ->setLabel('Id')
                 ->setSortable()
+        )->addDataContainer(
+            EntityListDataContainer::make('cover')
+        )->addDataContainer(
+            EntityListDataContainer::make('tags')
+                ->setLabel('Tags')
                 ->setHtml()
+        )->addDataContainer(
+            EntityListDataContainer::make('title')
+                ->setLabel('Title')
+                ->setSortable()
+        )->addDataContainer(
+            EntityListDataContainer::make('created_at')
+                ->setLabel('Created At')
+                ->setSortable()
+        )->addDataContainer(
+            EntityListDataContainer::make('updated_at')
+                ->setLabel('Updated At')
+                ->setSortable()
         );
     }
 
@@ -32,7 +52,12 @@ class ListService extends SharpEntityList
 
     public function buildListLayout()
     {
-        $this->addColumn('name', 12);
+        $this->addColumn('id', 1)
+            ->addColumn('cover', 1, 1)
+            ->addColumn('title', 1)
+            ->addColumn('tags', 2)
+            ->addColumn('created_at', 2)
+            ->addColumn('updated_at', 2);
     }
 
     /**
@@ -44,7 +69,8 @@ class ListService extends SharpEntityList
     {
         $this->setInstanceIdAttribute('id')
             ->setSearchable()
-            ->setDefaultSort('name', 'asc')
+            ->setDefaultSort('title', 'asc')
+            ->addFilter('tags', TagServiceFilter::class)
             ->setPaginated();
     }
 
@@ -56,6 +82,40 @@ class ListService extends SharpEntityList
     */
     public function getListData(EntityListQueryParams $params)
     {
-        return $this->transform(Service::all());
+        $service = Service::query();
+        if($params->sortedBy()) {
+            $service->orderBy($params->sortedBy(), $params->sortedDir());
+        }
+
+        if($params->hasSearch() || $params->filterFor('tags')) {
+            $service->leftJoin('service_tag', 'service.id', '=', 'service_tag.service_id')
+                ->leftJoin('tag', 'tag.id', '=', 'service_tag.tag_id');
+
+            if ($params->filterFor('tags')) {
+                $service->whereIn('tag.id', (array)$params->filterFor('tags'));
+            }
+
+            if ($params->hasSearch()) {
+                foreach ($params->searchWords() as $word) {
+                    $service->where(function ($query) use ($word) {
+                        $query->orWhere('service.title', 'like', $word)
+                            ->orWhere('tag.name', 'like', $word);
+                    });
+                }
+            }
+        }
+
+        $this->setCustomTransformer('tags', function($tags, $service) {
+            return $service->tags->map(function($tag) {
+                return (new LinkToEntity($tag->label, 'tags'))
+                    ->setTooltip('See related tags')
+                    ->setSearch($tag->title)
+                    ->render();
+            });
+        })->setCustomTransformer('cover', new SharpUploadModelAttributeTransformer(100));
+
+        return $this->transform($service->with('cover', 'tags')
+            ->paginate(10, ['service.*'])
+        );
     }
 }

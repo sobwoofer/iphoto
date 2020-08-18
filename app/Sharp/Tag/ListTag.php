@@ -3,6 +3,7 @@
 namespace App\Sharp\Tag;
 
 use App\Eloquent\Tag;
+use App\Sharp\Filters\TagPhotoFilter;
 use App\Sharp\Filters\TagPostFilter;
 use Code16\Sharp\EntityList\Containers\EntityListDataContainer;
 use Code16\Sharp\EntityList\EntityListQueryParams;
@@ -65,7 +66,6 @@ class ListTag extends SharpEntityList
         $this->setInstanceIdAttribute('id')
             ->setSearchable()
             ->setDefaultSort('id', 'asc')
-            ->addFilter('post', TagPostFilter::class)
             ->setPaginated();
     }
 
@@ -87,6 +87,18 @@ class ListTag extends SharpEntityList
                 $tag->leftJoin('post_tag', 'tag.id', '=', 'post_tag.tag_id')
                     ->leftJoin('post', 'post.id', '=', 'post_tag.post_id')
                     ->where('post.id', $post);
+            }
+
+            if ($photo = $params->filterFor('photo')) {
+                $tag->leftJoin('photo_tag', 'tag.id', '=', 'photo_tag.tag_id')
+                    ->leftJoin('photo', 'photo.id', '=', 'photo_tag.photo_id')
+                    ->where('photo.id', $photo);
+            }
+
+            if ($service = $params->filterFor('service')) {
+                $tag->leftJoin('service_tag', 'tag.id', '=', 'service_tag.tag_id')
+                    ->leftJoin('service', 'service.id', '=', 'service_tag.service_id')
+                    ->where('service.id', $service);
             }
 
             if ($params->sortedBy()) {

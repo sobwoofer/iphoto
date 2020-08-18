@@ -50,6 +50,7 @@ class ShowPost extends SharpShow
         )->addField(
              SharpShowTextField::make('description')
                  ->setLabel('Description:')
+                ->collapseToWordCount(20)
          )->addField(
              SharpShowTextField::make('cover')
          )->addField(

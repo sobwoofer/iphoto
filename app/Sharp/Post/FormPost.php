@@ -5,6 +5,7 @@ namespace App\Sharp\Post;
 use App\Eloquent\Post;
 use App\Eloquent\Tag;
 use Code16\Sharp\Form\Eloquent\Transformers\FormUploadModelTransformer;
+use Code16\Sharp\Form\Eloquent\Uploads\Transformers\SharpUploadModelFormAttributeTransformer;
 use Code16\Sharp\Form\Eloquent\WithSharpFormEloquentUpdater;
 use Code16\Sharp\Form\Fields\SharpFormMarkdownField;
 use Code16\Sharp\Form\Fields\SharpFormTagsField;
@@ -28,7 +29,7 @@ class FormPost extends SharpForm
 
         return $this->setCustomTransformer(
             'cover',
-            new FormUploadModelTransformer()
+            new SharpUploadModelFormAttributeTransformer()
         )->transform(
                 Post::with('cover', 'tags')->findOrFail($id)
             );

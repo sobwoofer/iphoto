@@ -25,10 +25,6 @@ class ListPost extends SharpEntityList
                 ->setLabel('title')
                 ->setSortable()
         )->addDataContainer(
-            EntityListDataContainer::make('description')
-                ->setLabel('Description')
-                ->setSortable()
-        )->addDataContainer(
             EntityListDataContainer::make('created_at')
                 ->setLabel('Created At')
                 ->setSortable()
@@ -49,7 +45,6 @@ class ListPost extends SharpEntityList
     {
         $this->addColumn('id', 1)
         ->addColumn('title', 3)
-        ->addColumn('description', 3)
         ->addColumn('created_at', 2)
         ->addColumn('updated_at', 2);
     }

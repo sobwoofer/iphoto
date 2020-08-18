@@ -3,6 +3,7 @@
 namespace App\Eloquent;
 
 use Eloquent;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 /**
@@ -20,10 +21,20 @@ class Photo extends Eloquent
     protected $fillable = ['image', 'title'];
 
     /**
-     * @return HasManyThrough
+     * @return BelongsToMany
      */
-    public function tags(): HasManyThrough
+    public function tags(): BelongsToMany
     {
-        return $this->hasManyThrough(Tag::class,PostTag::class);
+        return $this->belongsToMany(Tag::class);
+    }
+
+    public function photo()
+    {
+        return $this->morphOne(Media::class, 'model')->where('model_key', 'photo');
+    }
+
+    public function getDefaultAttributesFor($attribute): array
+    {
+        return $attribute === 'photo' ? ['model_key' => $attribute] : [];
     }
 }

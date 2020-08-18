@@ -3,8 +3,14 @@
 namespace App\Sharp\Photo;
 
 use App\Eloquent\Photo;
+use App\Eloquent\Post;
+use App\Eloquent\Tag;
+use Code16\Sharp\Form\Eloquent\Transformers\FormUploadModelTransformer;
+use Code16\Sharp\Form\Eloquent\Uploads\Transformers\SharpUploadModelFormAttributeTransformer;
 use Code16\Sharp\Form\Eloquent\WithSharpFormEloquentUpdater;
+use Code16\Sharp\Form\Fields\SharpFormTagsField;
 use Code16\Sharp\Form\Fields\SharpFormTextField;
+use Code16\Sharp\Form\Fields\SharpFormUploadField;
 use Code16\Sharp\Form\Layout\FormLayoutColumn;
 use Code16\Sharp\Form\SharpForm;
 
@@ -20,8 +26,11 @@ class FormPhoto extends SharpForm
      */
     public function find($id): array
     {
-        return $this->transform(
-            Photo::findOrFail($id)
+        return $this->setCustomTransformer(
+            'photo',
+            new SharpUploadModelFormAttributeTransformer()
+        )->transform(
+            Photo::with('photo', 'tags')->findOrFail($id)
         );
     }
 
@@ -52,8 +61,22 @@ class FormPhoto extends SharpForm
     public function buildFormFields()
     {
         $this->addField(
-            SharpFormTextField::make('name')
-                ->setLabel('Name')
+            SharpFormTextField::make('title')
+                ->setLabel('Title')
+        )->addField(
+            SharpFormUploadField::make('photo')
+                ->setLabel('Photo')
+                ->setFileFilterImages()
+                ->setCropRatio('1:1')
+                ->setStorageBasePath('data/photo')
+        )->addField(
+            SharpFormTagsField::make('tags',
+                Tag::orderBy('label')->get()->pluck('label', 'id')->all()
+            )->setLabel('Tags')
+                ->setCreatable(true)
+                ->setCreateAttribute('name')
+                ->setMaxTagCount(4)
+
         );
     }
 
@@ -65,7 +88,10 @@ class FormPhoto extends SharpForm
     public function buildFormLayout()
     {
         $this->addColumn(6, function(FormLayoutColumn $column) {
-            $column->withSingleField('name');
+            $column->withSingleField('title');
+        })->addColumn(6, function(FormLayoutColumn $column) {
+            $column->withSingleField('photo');
+            $column->withSingleField('tags');
         });
     }
 }

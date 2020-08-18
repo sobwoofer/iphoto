@@ -2,7 +2,7 @@
 
 namespace App\Sharp\Filters;
 
-use App\Eloquent\Post;
+use App\Eloquent\Tag;
 use Code16\Sharp\EntityList\EntityListSelectFilter;
 
 class TagPostFilter implements EntityListSelectFilter
@@ -12,8 +12,6 @@ class TagPostFilter implements EntityListSelectFilter
      */
     public function values()
     {
-        return Post::orderBy('title')
-            ->pluck('title', 'id')
-            ->all();
+        return Tag::orderBy('id')->pluck('label', 'id')->all();
     }
 }
