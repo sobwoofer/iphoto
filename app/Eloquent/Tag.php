@@ -3,6 +3,7 @@
 namespace App\Eloquent;
 
 use Eloquent;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
@@ -14,6 +15,10 @@ use Illuminate\Database\Eloquent\Relations\HasManyThrough;
  * @property string $label
  * @property string $created_at
  * @property string $updated_at
+ * @property Photo[] $photos
+ * @property Photo[] $photosOnWidget
+ * @property Service[] $services
+ * @property Post[] $posts
  */
 class Tag extends Eloquent
 {
@@ -37,11 +42,19 @@ class Tag extends Eloquent
     }
 
     /**
-     * @return HasManyThrough
+     * @return BelongsToMany
      */
-    public function photos(): HasManyThrough
+    public function photos(): BelongsToMany
     {
-        return $this->hasManyThrough(Photo::class, PhotoTag::class);
+        return $this->belongsToMany(Photo::class);
+    }
+
+    /**
+     * @return BelongsToMany
+     */
+    public function photosOnWidget(): BelongsToMany
+    {
+        return $this->belongsToMany(Photo::class)->limit(10);
     }
 
     /**

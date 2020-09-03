@@ -27,10 +27,10 @@ class FormPhoto extends SharpForm
     public function find($id): array
     {
         return $this->setCustomTransformer(
-            'photo',
+            'cover',
             new SharpUploadModelFormAttributeTransformer()
         )->transform(
-            Photo::with('photo', 'tags')->findOrFail($id)
+            Photo::with('cover', 'tags')->findOrFail($id)
         );
     }
 
@@ -64,10 +64,10 @@ class FormPhoto extends SharpForm
             SharpFormTextField::make('title')
                 ->setLabel('Title')
         )->addField(
-            SharpFormUploadField::make('photo')
+            SharpFormUploadField::make('cover')
                 ->setLabel('Photo')
                 ->setFileFilterImages()
-                ->setCropRatio('1:1')
+//                ->setCropRatio('1:1')
                 ->setStorageBasePath('data/photo')
         )->addField(
             SharpFormTagsField::make('tags',
@@ -90,7 +90,7 @@ class FormPhoto extends SharpForm
         $this->addColumn(6, function(FormLayoutColumn $column) {
             $column->withSingleField('title');
         })->addColumn(6, function(FormLayoutColumn $column) {
-            $column->withSingleField('photo');
+            $column->withSingleField('cover');
             $column->withSingleField('tags');
         });
     }

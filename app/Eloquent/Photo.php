@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Relations\HasManyThrough;
  * @property string $title
  * @property string $created_at
  * @property string $updated_at
+ * @property Media $cover
  */
 class Photo extends Eloquent
 {
@@ -28,13 +29,13 @@ class Photo extends Eloquent
         return $this->belongsToMany(Tag::class);
     }
 
-    public function photo()
+    public function cover()
     {
-        return $this->morphOne(Media::class, 'model')->where('model_key', 'photo');
+        return $this->morphOne(Media::class, 'model')->where('model_key', 'cover');
     }
 
     public function getDefaultAttributesFor($attribute): array
     {
-        return $attribute === 'photo' ? ['model_key' => $attribute] : [];
+        return $attribute === 'cover' ? ['model_key' => $attribute] : [];
     }
 }

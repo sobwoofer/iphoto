@@ -4,7 +4,6 @@ namespace App\Sharp\Entities\Post;
 
 use App\Eloquent\Post;
 use App\Eloquent\Tag;
-use Code16\Sharp\Form\Eloquent\Transformers\FormUploadModelTransformer;
 use Code16\Sharp\Form\Eloquent\Uploads\Transformers\SharpUploadModelFormAttributeTransformer;
 use Code16\Sharp\Form\Eloquent\WithSharpFormEloquentUpdater;
 use Code16\Sharp\Form\Fields\SharpFormMarkdownField;
@@ -76,7 +75,7 @@ class FormPost extends SharpForm
             SharpFormUploadField::make('cover')
                 ->setLabel('Cover')
                 ->setFileFilterImages()
-                ->setCropRatio('1:1')
+//                ->setCropRatio('1:1')
                 ->setStorageBasePath('data/post')
         )->addField(
             SharpFormTagsField::make('tags',

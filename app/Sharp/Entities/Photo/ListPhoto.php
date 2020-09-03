@@ -24,7 +24,7 @@ class ListPhoto extends SharpEntityList
                 ->setLabel('Id')
                 ->setSortable()
         )->addDataContainer(
-            EntityListDataContainer::make('photo')
+            EntityListDataContainer::make('cover')
         )->addDataContainer(
             EntityListDataContainer::make('tags')
                 ->setLabel('Tags')
@@ -53,7 +53,7 @@ class ListPhoto extends SharpEntityList
     public function buildListLayout()
     {
         $this->addColumn('id', 1)
-            ->addColumn('photo', 1, 2)
+            ->addColumn('cover', 1, 2)
             ->addColumn('title', 3)
             ->addColumn('tags', 3)
             ->addColumn('created_at', 2)
@@ -112,9 +112,9 @@ class ListPhoto extends SharpEntityList
                     ->setSearch($tag->title)
                     ->render();
             });
-        })->setCustomTransformer('photo', new SharpUploadModelAttributeTransformer(100));
+        })->setCustomTransformer('cover', new SharpUploadModelAttributeTransformer(100));
 
-        return $this->transform($photos->with('photo', 'tags')
+        return $this->transform($photos->with('cover', 'tags')
             ->paginate(10, ['photo.*'])
         );
     }

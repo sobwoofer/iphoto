@@ -16,10 +16,10 @@ return [
             'form' => \App\Sharp\Entities\Post\FormPost::class,
             'show' => \App\Sharp\Entities\Post\ShowPost::class,
         ],
-        'post_tag' => [
-            'list' => \App\Sharp\EmbeddedEntityLists\ListPostTag::class,
-            'form' => \App\Sharp\Entities\Tag\FormTag::class,
-        ],
+//        'post_tag' => [
+//            'list' => \App\Sharp\EmbeddedEntityLists\ListPostTag::class,
+//            'form' => \App\Sharp\Entities\Tag\FormTag::class,
+//        ],
         'photo' => [
             'list' => \App\Sharp\Entities\Photo\ListPhoto::class,
             'form' => \App\Sharp\Entities\Photo\FormPhoto::class,

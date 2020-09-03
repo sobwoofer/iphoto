@@ -60,7 +60,7 @@ class ShowPost extends SharpShow
              SharpShowTextField::make('updated_at')
                  ->setLabel('Updated At:')
          )->addField(
-             SharpShowEntityListField::make('tags', 'post_tag')
+             SharpShowEntityListField::make('tags', 'tag')
                  ->hideFilterWithValue('post', function($instanceId) {
                      return $instanceId;
                  })

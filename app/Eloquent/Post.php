@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Relations\HasManyThrough;
  * @property string $description
  * @property string $created_at
  * @property string $updated_at
+ * @property Media $cover
  */
 class Post extends Eloquent
 {

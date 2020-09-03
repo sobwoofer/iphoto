@@ -20,9 +20,9 @@ class ShowPhoto extends SharpShow
      */
     public function find($id): array
     {
-        $photo = Photo::with('photo')->findOrFail($id);
+        $photo = Photo::with('cover')->findOrFail($id);
         // Replace/complete this code
-        $this->setCustomTransformer('photo', new SharpUploadModelAttributeTransformer(600));
+        $this->setCustomTransformer('cover', new SharpUploadModelAttributeTransformer(600));
 
         return $this->transform($photo);
     }
@@ -41,7 +41,7 @@ class ShowPhoto extends SharpShow
              SharpShowTextField::make('title')
                  ->setLabel('Title:')
          )->addField(
-             SharpShowTextField::make('photo')
+             SharpShowTextField::make('cover')
          )->addField(
              SharpShowTextField::make('created_at')
                  ->setLabel('Created At:')
@@ -75,7 +75,7 @@ class ShowPhoto extends SharpShow
               });
          })->addSection('Image', function(ShowLayoutSection $section) {
              $section->addColumn(6, function(ShowLayoutColumn $column) {
-                 $column->withSingleField('photo');
+                 $column->withSingleField('cover');
              });
          })->addEntityListSection('tags');
     }

@@ -1,11 +1,11 @@
 @charset "utf-8";
 /*------------------------------------------------------------------
-.______    __  ___   ___  __   _______  ___________    ____ 
-|   _  \  |  | \  \ /  / |  | |   ____||   ____\   \  /   / 
-|  |_)  | |  |  \  V  /  |  | |  |__   |  |__   \   \/   /  
-|   ___/  |  |   >   <   |  | |   __|  |   __|   \_    _/   
-|  |      |  |  /  .  \  |  | |  |____ |  |        |  |     
-| _|      |__| /__/ \__\ |__| |_______||__|        |__|     
+.______    __  ___   ___  __   _______  ___________    ____
+|   _  \  |  | \  \ /  / |  | |   ____||   ____\   \  /   /
+|  |_)  | |  |  \  V  /  |  | |  |__   |  |__   \   \/   /
+|   ___/  |  |   >   <   |  | |   __|  |   __|   \_    _/
+|  |      |  |  /  .  \  |  | |  |____ |  |        |  |
+| _|      |__| /__/ \__\ |__| |_______||__|        |__|
 
 
 @charset "utf-8";
@@ -37,9 +37,9 @@ Paragraph: 'Open Sans', sans-serif;
     6.1 - MiniMalio - Arrow Down for CEO Section
 7.MiniMalio - Hire Me Section
 8.MiniMalio - FOOTER CSS
-9.MiniMalio - About Page CSS 
+9.MiniMalio - About Page CSS
     9.1 - MiniMalio - About Page CSS for Skill Progress Bar
-10.MiniMalio - Blog Page CSS 
+10.MiniMalio - Blog Page CSS
     10.1 - MiniMalio - Blog Page CSS for Pagination Section
     10.2 - MiniMalio - Blog Page CSS for sidebar-section
     10.3 - MiniMalio - minimalio-arrow-right in Blog Catagories
@@ -141,7 +141,7 @@ input{
     z-index: 2
 }
 
-.minimalio-menu-section .minimalio-menu { 
+.minimalio-menu-section .minimalio-menu {
     float: right;
     margin: 25px 0 0 0;
 }
@@ -170,7 +170,7 @@ input{
   transform: rotate(0deg)
 }
 
-.minimalio-menu-section .minimalio-nav-icon span:nth-child(1) { 
+.minimalio-menu-section .minimalio-nav-icon span:nth-child(1) {
     top: 0px
 }
 
@@ -178,8 +178,8 @@ input{
     top: 8px
 }
 
-.minimalio-menu-section .minimalio-nav-icon span:nth-child(3) { 
-    top: 16px 
+.minimalio-menu-section .minimalio-nav-icon span:nth-child(3) {
+    top: 16px
 }
 
 .minimalio-menu-section .minimalio-nav-icon.active span:nth-child(1) {
@@ -265,7 +265,7 @@ input{
     -webkit-animation: fadeInRight .5s ease forwards;
     -moz-animation: fadeInRight .5s ease forwards;
     -o-animation: fadeInRight .5s ease forwards;
-    animation: fadeInRight .5s ease forwards;    
+    animation: fadeInRight .5s ease forwards;
     -webkit-animation-delay: .45s;
     -moz-animation-delay: .45s;
     -o-animation-delay: .45s;
@@ -534,10 +534,10 @@ input{
 #minimalio-hero-slide {
     position: relative;
 }
-#minimalio-hero-slide, 
-#minimalio-hero-slide > div, 
-#minimalio-hero-slide > div > div, 
-#minimalio-hero-slide > div > div > div, 
+#minimalio-hero-slide,
+#minimalio-hero-slide > div,
+#minimalio-hero-slide > div > div,
+#minimalio-hero-slide > div > div > div,
 #minimalio-hero-slide > div > div > div > div {
     height: 100%;
 }
@@ -834,7 +834,7 @@ body.minimalio-indx-2 #minimalio-hero-slide .owl-item.active .minimalio-hero-sli
 .minimalio-load-more{
     text-align: center;
     padding-top: 90px;
-    
+
 }
 
 .minimalio-load-more a{
@@ -1158,10 +1158,10 @@ width: 33.33%;
   8.MiniMalio - FOOTER CSS
 ------------------------------------------------------------------*/
 .minimalio-footer-arrow-down {
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 20px solid transparent;
-  border-right: 20px solid transparent;  
+  border-right: 20px solid transparent;
   border-top: 20px solid #ffffff;
   position: absolute;
   transform: translateX(-50%);
@@ -1236,7 +1236,7 @@ width: 33.33%;
 }
 
 /* -----------------------------------------------------------------
-  9.MiniMalio - About Page CSS 
+  9.MiniMalio - About Page CSS
 ------------------------------------------------------------------*/
 .minimalio-about-ones-details{
     padding: 95px 0 135px;
@@ -1337,7 +1337,7 @@ width: 33.33%;
 }
 
 /* -----------------------------------------------------------------
-  10.MiniMalio - Blog Page CSS 
+  10.MiniMalio - Blog Page CSS
 ------------------------------------------------------------------*/
 .minimalio-blog-section{
     padding: 75px 0 150px;
@@ -1734,7 +1734,7 @@ width: 33.33%;
 ------------------------------------------------------------------*/
 .minimalio-contact-header-section{
     padding-top: 3.125em;
-    min-height: 20em;    
+    min-height: 20em;
     background-image: url(http://via.placeholder.com/1600x330);
     background-position: center center;
     background-repeat: no-repeat;
@@ -1744,6 +1744,17 @@ width: 33.33%;
 
 .minimalio-contact-header-section .row:last-child{
     padding-top: 120px;
+}
+
+.minimalio-contact-header-section.portfolio{
+    background-image: url(image/portfolio-cover.jpg);
+}
+
+.minimalio-contact-header-section.blog{
+    background-image: url(image/blog-cover.jpg);
+}
+.minimalio-contact-header-section.single-blog{
+    background-image: url(image/single-blog-cover.jpg);
 }
 
 .minimalio-contact-breadcrumb ul li{
