@@ -17,4 +17,4 @@ Route::get('/portfolio','PortfolioController@index')->name('portfolio');
 Route::get('/blog','BlogController@index')->name('blog');
 Route::get('/single-blog/{id}','BlogController@single')->name('single-blog');
 Route::get('/about','AboutController@index')->name('about');
-Route::get('/contact','ContacttController@single')->name('contact');
+Route::get('/contact','ContactController@index')->name('contact');

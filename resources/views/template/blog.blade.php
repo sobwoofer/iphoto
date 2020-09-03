@@ -29,10 +29,6 @@
 
 					<div class="col-md-4 col-sm-4 col-xs-12">
 						<div class="minimalio-blog-sidebar-section">
-							<div class="minimalio-blog-searchbox">
-								<input type="text" placeholder="Search here">
-								<i class="fa fa-search"></i>
-							</div> <!-- end minimalio-blog-searchbox -->
 							<div class="minimalio-blog-catagories">
 								<h3>CATEGORIES</h3>
 								<ul class="minimalio-lavalamp-rarrow">
