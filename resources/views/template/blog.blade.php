@@ -29,26 +29,32 @@
 
 					<div class="col-md-4 col-sm-4 col-xs-12">
 						<div class="minimalio-blog-sidebar-section">
-							<div class="minimalio-blog-catagories">
-								<h3>CATEGORIES</h3>
-								<ul class="minimalio-lavalamp-rarrow">
-									<li><a href="#">All</a></li>
-									<li><a href="#">Web Design</a></li>
-									<li><a href="#">Web Development</a></li>
-									<li><a href="#">Clean</a></li>
-									<li><a href="#">Fashion</a></li>
-									<li><a href="#">Journal</a></li>
-									<li><a href="#">Photography</a></li>
-								</ul>
-							</div> <!-- end minimalio-blog-catagories -->
+{{--							<div class="minimalio-blog-catagories">--}}
+{{--								<h3>CATEGORIES</h3>--}}
+{{--								<ul class="minimalio-lavalamp-rarrow">--}}
+{{--									<li><a href="#">All</a></li>--}}
+{{--									<li><a href="#">Web Design</a></li>--}}
+{{--									<li><a href="#">Web Development</a></li>--}}
+{{--									<li><a href="#">Clean</a></li>--}}
+{{--									<li><a href="#">Fashion</a></li>--}}
+{{--									<li><a href="#">Journal</a></li>--}}
+{{--									<li><a href="#">Photography</a></li>--}}
+{{--								</ul>--}}
+{{--							</div> <!-- end minimalio-blog-catagories -->--}}
 							<div class="minimalio-blog-tags">
 								<h3>TAG</h3>
 								<ul>
-									<li><a href="#">Photography</a></li>
-									<li><a href="#">UI & UX</a></li>
-									<li><a href="#">Web Development</a></li>
-									<li><a href="#">Movie</a></li>
-									<li><a href="#">Game</a></li>
+
+									<li><a href="{{route('blog')}}">Всі</a></li>
+								@foreach($allTags as $tag)
+									@php
+									$active = $currentTag === $tag->tag ? 'active' : '';
+									@endphp
+									<li><a class="item {{$currentTag === $tag->tag ? 'active' : ''}}"
+										   href="{{$currentTag === $tag->tag ? '#' : route('blog', ['tag' => $tag->tag])}}">
+											{{$tag->label}}
+										</a></li>
+								@endforeach
 								</ul>
 							</div> <!-- end minimalio-blog-tags -->
 						</div> <!-- end minimalio-blog-sidebar-section -->

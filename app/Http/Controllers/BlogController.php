@@ -7,22 +7,31 @@ namespace App\Http\Controllers;
 use App\Eloquent\Photo;
 use App\Eloquent\Post;
 use App\Eloquent\Tag;
+use Request;
 
 class BlogController extends Controller
 {
 
-    public function index()
+    public function index($tag = null)
     {
-        $posts = Post::query()->get()->all();
+        $allTags = Tag::query()->leftJoin('post_tag', 'id', '=', 'tag_id')->get()->all();
 
-        /** @var Post $post */
-        foreach ($posts as $post) {
-            $img = $post->cover->thumbnail(1600);
+        if ($tag) {
+            $posts = Post::query()
+                ->leftJoin('post_tag', 'post.id', 'post_tag.post_id')
+                ->leftJoin('tag', 'tag.id', 'post_tag.tag_id')
+                ->where('tag.tag', $tag)
+                ->get()
+                ->all();
+        } else {
+            $posts = Post::query()->get()->all();
         }
 
         return view('template.blog', [
             'pageTitle' => 'Blog',
-            'posts' => $posts
+            'posts' => $posts,
+            'allTags' => $allTags,
+            'currentTag' => $tag
         ]);
     }
 

@@ -752,6 +752,11 @@ body.minimalio-indx-2 #minimalio-hero-slide .owl-item.active .minimalio-hero-sli
     margin-left: -12px;
 }
 
+.minimalio-blog-tags .item.active {
+    background-color: #666666;
+    color: #fff;
+}
+
 /* -----------------------------------------------------------------
   4.2 - MiniMalio - minimalio-services-content
 ------------------------------------------------------------------*/
