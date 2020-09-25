@@ -41,6 +41,9 @@ class ShowPhoto extends SharpShow
              SharpShowTextField::make('title')
                  ->setLabel('Title:')
          )->addField(
+             SharpShowTextField::make('widget')
+                 ->setLabel('Widget:')
+         )->addField(
              SharpShowTextField::make('cover')
          )->addField(
              SharpShowTextField::make('created_at')
@@ -70,6 +73,7 @@ class ShowPhoto extends SharpShow
               $section->addColumn(6, function(ShowLayoutColumn $column) {
                   $column->withSingleField('id');
                   $column->withSingleField('title');
+                  $column->withSingleField('widget');
                   $column->withSingleField('created_at');
                   $column->withSingleField('updated_at');
               });

@@ -52,11 +52,11 @@ class ListOrder extends SharpEntityList
     public function buildListLayout()
     {
         $this->addColumn('id', 1);
-        $this->addColumn('first_name', 1);
-        $this->addColumn('phone', 1);
-        $this->addColumn('email', 1);
-        $this->addColumn('service_name', 1);
-        $this->addColumn('created_at', 1);
+        $this->addColumn('first_name', 2);
+        $this->addColumn('phone', 2);
+        $this->addColumn('email', 2);
+        $this->addColumn('service_name', 2);
+        $this->addColumn('created_at', 2);
     }
 
     /**

@@ -33,4 +33,5 @@
     <link rel="stylesheet" href="/vendor/template/css/responsive.css">
     <!-- modernizr custom js -->
     <script src="/vendor/template/js/modernizr.custom.js"></script>
+
 </head>

@@ -38,9 +38,11 @@ class BlogController extends Controller
     public function single(int $id)
     {
         $post = Post::query()->where('id', $id)->firstOrFail();
+        $allTags = Tag::query()->leftJoin('post_tag', 'id', '=', 'tag_id')->get()->all();
 
         return view('template.single-blog', [
-            'post' => $post
+            'post' => $post,
+            'allTags' => $allTags,
         ]);
     }
 

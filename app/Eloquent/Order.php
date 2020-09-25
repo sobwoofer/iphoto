@@ -25,7 +25,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class Order extends Eloquent
 {
     protected $table = 'order';
-    protected $fillable = ['first_name', 'phone', 'email', 'message', 'service_name', 'price'];
+    protected $fillable = ['first_name', 'phone', 'email', 'message', 'service_name', 'price', 'service_id'];
 
     /**
      * @return BelongsTo

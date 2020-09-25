@@ -4,20 +4,20 @@
     <div class="container">
         <div class="minimalio-footer">
             <div class="minimalio-footer-copyright">
-                <p>COPY RIGHT &copy; 2017 WPCUP</p>
+                <p>ВСІ ПРАВА ЗАХИЩЕНІ &copy; {{date('Y')}} TETIANA CHUHUNOVA</p>
             </div>	<!-- end minimalio-footer-copyright -->
             <div class="minimalio-social-icons">
                 <ul>
-                    <li><a href="#" class="minimalio-icon-twitter"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#" class="minimalio-icon-google-plus"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#" class="minimalio-icon-facebook"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#" class="minimalio-icon-pinterest"><i class="fa fa-pinterest"></i></a></li>
+                    <li><a href="tg://@Tetiana_Chuhunova" class="minimalio-icon-google-plus" target="_blank"><i class="fa fa-paper-plane" aria-hidden="true"></i></a></li>
+                    <li><a href="mailto:tanuha811@gmail.com" class="minimalio-icon-google-plus" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.facebook.com/tetiana.chuhunova" target="_blank" class="minimalio-icon-facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/tetiana_chuhunova" class="minimalio-icon-pinterest" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                 </ul>
             </div> <!-- end minimalio-social-icons -->
             <div class="minimalio-footer-bottom">
-                <p class="minimalio-address"><strong>Address:</strong> YourCity, Your State, Newyork</p>
-                <p class="minimalio-email"><strong>Email:</strong> name@email.com</p>
-                <p class="minimalio-phone"><strong>Phone:</strong> 123.121.258.858</p>
+{{--                <p class="minimalio-address"><strong>Flhtcf:</strong> YourCity, Your State, Newyork</p>--}}
+                <p class="minimalio-email"><strong>Email:</strong> tanuha811@gmail.com</p>
+                <p class="minimalio-phone"><strong>Телефон:</strong> +38 (096) 776 64 25</p>
             </div>	<!-- end minimalio-footer-bottom -->
         </div> <!-- end minimalio-footer -->
     </div> <!-- end container -->
@@ -43,5 +43,6 @@
 <script src="/vendor/template/js/owl.carousel.min.js"></script>
 <!-- MINIMALIO CUSTOM SCRIPT -->
 <script src="/vendor/template/js/main.js"></script>
+<script src="/vendor/template/js/bootstrap.js"></script>
 </body>
 </html>

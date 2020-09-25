@@ -16,7 +16,7 @@
 {{--                <li><a href="#"><i class="fa fa-heart"></i></a></li>--}}
 {{--            </ul>--}}
 {{--        </div>--}}
-        <div class="pull-right col-md-6 col-sm-6 col-xs-12 minimalio-blog-readmore">
+        <div class="pull-right col-md-12 col-sm-13 col-xs-12 minimalio-blog-readmore">
             <a href="{{route('single-blog', ['id' => $post->id])}}" target="_self">Read More</a>
         </div>
     </div>	<!-- end row and minimalio-blog-comments -->

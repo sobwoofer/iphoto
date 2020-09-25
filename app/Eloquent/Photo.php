@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Relations\HasManyThrough;
  * @property int $id
  * @property string $image
  * @property string $title
+ * @property boolean $widget
  * @property string $created_at
  * @property string $updated_at
  * @property Media $cover
@@ -19,7 +20,7 @@ use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 class Photo extends Eloquent
 {
     protected $table = 'photo';
-    protected $fillable = ['image', 'title'];
+    protected $fillable = ['image', 'title', 'widget'];
 
     /**
      * @return BelongsToMany

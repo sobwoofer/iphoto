@@ -9,8 +9,8 @@
                         <span>Lorem ipsum dolor</span>
                     </div>
                     <div class="pricing-plans">
-                        <span class="price-value"><i class="fa fa-uah">₴</i><span>{{$service->price}}</span></span>
-                        <span class="month">/год.</span>
+                        <span class="price-value">Від {{$service->price}}</span></span>
+                        <span class="month"><i class="fa fa-uah">₴</i><span> /год.</span>
                     </div>
                     <div class="pricingContent">
                         <ul>
@@ -22,10 +22,49 @@
                         </ul>
                     </div><!-- CONTENT BOX-->
                     <div class="pricingTable-sign-up">
-                        <a href="#" class="btn btn-block">sign up</a>
+                        <button href="#" data-toggle="modal" data-target="#service_{{$service->id}}" class="btn btn-block">
+                            Замовити
+                        </button>
                     </div><!-- BUTTON BOX-->
                 </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="service_{{$service->id}}" tabindex="-1" role="dialog" aria-labelledby="service_{{$service->id}}Label" aria-hidden="true">
+                    <form data-toggle="validator" class="modal-dialog" method="POST" action="{{route('order')}}" role="document">
+                        @csrf
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="service_{{$service->id}}Label">Замовити {{$service->title}}</h5>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <input type="text" name="name" class="form-control" id="name_{{$service->id}}"
+                                           required aria-describedby="name" placeholder="Введіть ім'я" oninvalid="this.setCustomValidity('Поле обов\'язкове для вооду')">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="phone" class="form-control" oninvalid="this.setCustomValidity('Поле обов\'язкове для вооду')" id="phone_{{$service->id}}" required aria-describedby="phone" placeholder="Телефон">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" class="form-control" id="email_{{$service->id}}" aria-describedby="email" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" name="message" id="message_{{$service->id}}" placeholder="Повідомлення"></textarea>
+                                </div>
+
+                                <input type="hidden" name="service_id" value="{{$service->id}}">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрити</button>
+                                <button type="submit" class="btn btn-primary orderButton">Замовити</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- EndModal -->
+
             </div>
+
+
 
 
 {{--        <div class="col-md-4 col-sm-6">--}}
@@ -52,6 +91,39 @@
 {{--                <a href="#" class="pricingTable-signup">Buy Now</a>--}}
 {{--            </div>--}}
 {{--        </div>--}}
+{{--            <script>--}}
+                {{--$("#service_{{$service->id}}").submit(function(event){--}}
+                {{--    // cancels the form submission--}}
+                {{--    event.preventDefault();--}}
+                {{--    $.ajax({--}}
+                {{--        type: "POST",--}}
+                {{--        url: "{{route('order')}}",--}}
+                {{--        data: $('form.modal-body').serialize(),--}}
+                {{--        success: function(msg){--}}
+                {{--            alert(msg);--}}
+                {{--        },--}}
+                {{--        error: function(){--}}
+                {{--            alert("failure");--}}
+                {{--        }--}}
+                {{--    });--}}
+                {{--});--}}
+
+                {{--$(function() {--}}
+                {{--    $("#service_{{$service->id}}").submit(function(event){--}}
+                {{--        $.ajax({--}}
+                {{--            type: "POST",--}}
+                {{--            url: "{{route('order')}}",--}}
+                {{--            data: $('form.modal-body').serialize(),--}}
+                {{--            success: function(msg){--}}
+                {{--                alert(msg);--}}
+                {{--            },--}}
+                {{--            error: function(){--}}
+                {{--                alert("failure");--}}
+                {{--            }--}}
+                {{--        });--}}
+                {{--    });--}}
+                {{--});--}}
+{{--            </script>--}}
         @endforeach
 
     </div>

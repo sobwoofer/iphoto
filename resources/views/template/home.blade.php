@@ -7,22 +7,15 @@
 			@include('template.partials.header', ['title' => $title])
 			<!-- start minimalio-hero-section -->
 			<section class="minimalio-hero-section">
-				@include('template.partials.slider', ['sliderPhotos' => $sliderPhotos])
+				@include('template.partials.slider', ['sliderItems' => $sliderItems])
 			</section> <!-- end minimalio-hero-section -->
 		</div>
 
 		<!-- start minimalio-services-section -->
 		<div id="work" class="minimalio-services-section">
-			@include('template.partials.portfolio', ['tags' => $tags])
+			@include('template.partials.portfolio-home', ['photos' => $photos])
 			@include('template.partials.services', ['services' => $services])
 		</div> <!-- end minimalio-services-section -->
-
-		<!-- start minimalio-counting-section -->
-		<div class="minimalio-counting-section">
-			<div class="container">
-				@include('template.partials.advantages', [])
-			</div>
-		</div> <!-- end minimalio-counting-section -->
 
 		<!-- start minimalio-my-latest-blog -->
 		<section class="minimalio-my-latest-blog">
@@ -41,7 +34,7 @@
 		<!-- start minimalio-ceo-section  -->
 		<section id="team" class="minimalio-ceo-section">
 			<div class="minimalio-quote">
-				<img src="img/quote.png" alt="Quote Image">
+				<i class="fa fa-comments" aria-hidden="true"></i>
 			</div>
 			<div class="container">
 				<div class="row">
@@ -144,10 +137,10 @@
 			<div class="container">
 				<div class="row">
 					<div class="minimalio-hire-me">
-						<div class="col-md-4 col-md-offset-1 col-sm-4 col-xs-6 minimalio-hire-me-content">
+						<div class="col-md-4 pull-left col-md-offset-1 col-sm-4 col-xs-6 minimalio-hire-me-content">
 							<h2 class="minimalio-arrow-right">I'M THE MAGICIAN <br> <strong>You</strong> <br> WANT ME TO BE</h2>
 						</div>
-						<div class="col-md-6 col-md-offset-1 col-sm-6 col-sm-offset-1 col-xs-6 minimalio-hire-me-button">
+						<div class="col-md-6 pull-right col-md-offset-1 col-sm-6 col-sm-offset-1 col-xs-6 minimalio-hire-me-button">
 							<a href="#">HIRE ME<i class="fa fa-paper-plane-o"></i></a>
 						</div>
 					</div> <!-- end minimalio-hire-me -->

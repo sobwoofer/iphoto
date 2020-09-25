@@ -26,6 +26,9 @@ class ListPhoto extends SharpEntityList
         )->addDataContainer(
             EntityListDataContainer::make('cover')
         )->addDataContainer(
+            EntityListDataContainer::make('widget')
+                ->setLabel('Widget')
+        )->addDataContainer(
             EntityListDataContainer::make('tags')
                 ->setLabel('Tags')
                 ->setHtml()
@@ -54,10 +57,10 @@ class ListPhoto extends SharpEntityList
     {
         $this->addColumn('id', 1)
             ->addColumn('cover', 1, 2)
+            ->addColumn('widget', 1)
             ->addColumn('title', 3)
             ->addColumn('tags', 3)
-            ->addColumn('created_at', 2)
-            ->addColumn('updated_at', 2);
+            ->addColumn('created_at', 2);
     }
 
     /**

@@ -41,22 +41,9 @@
 {{--									<li><a href="#">Photography</a></li>--}}
 {{--								</ul>--}}
 {{--							</div> <!-- end minimalio-blog-catagories -->--}}
-							<div class="minimalio-blog-tags">
-								<h3>TAG</h3>
-								<ul>
 
-									<li><a href="{{route('blog')}}">Всі</a></li>
-								@foreach($allTags as $tag)
-									@php
-									$active = $currentTag === $tag->tag ? 'active' : '';
-									@endphp
-									<li><a class="item {{$currentTag === $tag->tag ? 'active' : ''}}"
-										   href="{{$currentTag === $tag->tag ? '#' : route('blog', ['tag' => $tag->tag])}}">
-											{{$tag->label}}
-										</a></li>
-								@endforeach
-								</ul>
-							</div> <!-- end minimalio-blog-tags -->
+							@include('template.partials.blog-menu', ['allTags' => $allTags, 'currentTag' => $currentTag])
+
 						</div> <!-- end minimalio-blog-sidebar-section -->
 					</div> <!-- end col-md-4 -->
 				</div>	<!-- end row -->

@@ -16,30 +16,39 @@ class HomeController extends Controller
     {
         $sliderPhotos = Photo::whereIn('id', [6,9,12])->get();
 
-        /** @var Photo $sliderPhoto */
-        foreach ($sliderPhotos as $sliderPhoto) {
-            $img = $sliderPhoto->cover->thumbnail(1600);
-        }
+        $photos = Photo::where('widget',true)->get();
 
-        $tags = Tag::whereIn('id', [1,2,3])->get();
-
-        /** @var Tag $tag */
-        foreach ($tags as $tag) {
-            $photos = $tag->photos;
-        }
-
-        $posts = Post::whereIn('id', [1,2,3])->get();
-        /** @var Post $post */
-        foreach ($posts as $post) {
-            $img = $post->cover->thumbnail(1600);
-        }
+        $posts = Post::query()->limit(3)->get();
 
         $services = Service::query()->get()->all();
 
+        $sliderItems = [
+            [
+                'title' => 'Привіт, мене звати',
+                'name' => 'Чуганова Тетяна',
+                'description' => 'Я професійний фотограф',
+                'photo' => $sliderPhotos[0],
+                'buttonLink' => route('contact'),
+                'buttonName' => 'Зв\'язатись',
+            ],
+            [
+                'title' => 'Slide2',
+                'name' => 'Slide2 name',
+                'description' => 'Slide2 description',
+                'photo' => $sliderPhotos[1],
+            ],
+            [
+                'title' => 'Slide3',
+                'name' => 'Slide3 name',
+                'description' => 'Slide3 description',
+                'photo' => $sliderPhotos[2],
+            ]
+        ];
+
         return view('template.home', [
-            'sliderPhotos' => $sliderPhotos,
-            'tags' => $tags,
+            'sliderItems' => $sliderItems,
             'widgetPosts' => $posts,
+            'photos' => $photos,
             'services' => $services,
             'title' => 'Chugunova site',
         ]);

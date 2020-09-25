@@ -17,6 +17,7 @@ class CreatePhotoTable extends Migration
             $table->bigIncrements('id');
             $table->string('image')->nullable();
             $table->string('title')->nullable();
+            $table->boolean('widget')->default(false);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });

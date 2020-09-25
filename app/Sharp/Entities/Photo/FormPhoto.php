@@ -8,6 +8,7 @@ use App\Eloquent\Tag;
 use Code16\Sharp\Form\Eloquent\Transformers\FormUploadModelTransformer;
 use Code16\Sharp\Form\Eloquent\Uploads\Transformers\SharpUploadModelFormAttributeTransformer;
 use Code16\Sharp\Form\Eloquent\WithSharpFormEloquentUpdater;
+use Code16\Sharp\Form\Fields\SharpFormSelectField;
 use Code16\Sharp\Form\Fields\SharpFormTagsField;
 use Code16\Sharp\Form\Fields\SharpFormTextField;
 use Code16\Sharp\Form\Fields\SharpFormUploadField;
@@ -64,6 +65,9 @@ class FormPhoto extends SharpForm
             SharpFormTextField::make('title')
                 ->setLabel('Title')
         )->addField(
+            SharpFormSelectField::make('widget', [true => 'yes', false => 'no'])
+                ->setLabel('Show in Widget')
+        )->addField(
             SharpFormUploadField::make('cover')
                 ->setLabel('Photo')
                 ->setFileFilterImages()
@@ -89,6 +93,7 @@ class FormPhoto extends SharpForm
     {
         $this->addColumn(6, function(FormLayoutColumn $column) {
             $column->withSingleField('title');
+            $column->withSingleField('widget');
         })->addColumn(6, function(FormLayoutColumn $column) {
             $column->withSingleField('cover');
             $column->withSingleField('tags');

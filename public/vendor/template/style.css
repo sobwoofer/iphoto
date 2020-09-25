@@ -517,7 +517,8 @@ input{
     position: absolute;
     text-align: left;
     top: 50%;
-    width: 600px;
+    width: 700px;
+    padding-top: 30px;
     transform: translateY(-50%);
 }
 
@@ -949,16 +950,18 @@ width: 33.33%;
 /* -----------------------------------------------------------------
   5.MiniMalio - minimalio-quote
 ------------------------------------------------------------------*/
-.minimalio-quote img {
+.minimalio-quote i {
     background-color: #666666;
     border: 5px solid #cccccc;
     border-radius: 50%;
     left: calc(50% - 27px);
-    padding: 22px;
+    padding: 11px;
     position: absolute;
     top: -5.5%;
     width: 70px;
     height: 70px;
+    font-size: 37px;
+    color: #f7f7f7;
 }
 
 /* -----------------------------------------------------------------
@@ -1120,6 +1123,15 @@ width: 33.33%;
 
 .minimalio-hire-me{
     font-size: 30px;
+    width: 100%;
+}
+
+.minimalio-header {
+    width: 100%;
+}
+
+.modal.show {
+    z-index: 9!important;
 }
 
 .minimalio-hire-me h2 {
@@ -1739,8 +1751,8 @@ width: 33.33%;
   12.MiniMalio - Contact Page CSS
 ------------------------------------------------------------------*/
 .minimalio-contact-header-section{
-    padding-top: 3.125em;
-    min-height: 20em;
+    padding-top: 15px;
+    min-height: 14em;
     background-image: url(http://via.placeholder.com/1600x330);
     background-position: center center;
     background-repeat: no-repeat;
@@ -1749,7 +1761,7 @@ width: 33.33%;
 }
 
 .minimalio-contact-header-section .row:last-child{
-    padding-top: 120px;
+    padding-top: 15px;
 }
 
 .minimalio-contact-header-section.portfolio{
