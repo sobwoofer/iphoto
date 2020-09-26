@@ -28,6 +28,7 @@ Table of Content
 	        var w = $container.width(),
 	          columnNum = 1,
 	          columnWidth = 0;
+
 	        if (w > 1200) {
 	          columnNum  = 3;
 	        } else if (w > 900) {
@@ -36,7 +37,7 @@ Table of Content
 	          columnNum  = 2;
 	        } else if (w > 450) {
 	          columnNum  = 2;
-	        } else if (w > 185) {
+	        } else if (w > 385) {
 	          columnNum  = 1;
 	        }
 	        columnWidth = Math.floor(w/columnNum);

@@ -39,6 +39,7 @@ Table of Content
 	        } else if (w > 385) {
 	          columnNum  = 1;
 	        }
+
 	        columnWidth = Math.floor(w/columnNum);
 	        $container.find('.minimalio-grid-item').each(function() {
 	          var $item = $(this),
