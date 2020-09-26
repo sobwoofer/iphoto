@@ -2109,7 +2109,7 @@ width: 33.33%;
 .minimalio-latest-blog-title {
     margin: 0 auto 80px;
     text-align: center;
-    width: 600px;
+    /*width: 600px;*/
 }
 .minimalio-latest-blog-button > button {
     background: #666666 none repeat scroll 0 0;
