@@ -36,7 +36,7 @@ class CreatedOrderListener
         $message = 'Вітаю, Нове замовення з сайту сервіс: ' . $event->order->service_name . PHP_EOL;
         $message .= 'Ім\'я: ' . $event->order->first_name. PHP_EOL;
         $message .= 'Телефон: ' . $event->order->phone. PHP_EOL;
-        $message .= 'Email: ' . $event->order->phone. PHP_EOL;
+        $message .= 'Email: ' . $event->order->email. PHP_EOL;
         $message .= 'Мінімальна ціна з сервісу: ' . $event->order->price. PHP_EOL;
         $message .= 'Повідомлення: ' . $event->order->message;
 
