@@ -22,10 +22,10 @@ Table of Content
 	/* =======================================================
 	### ISOTOPE FILTERING INIT
 	========================================================== */
-	jQuery(window).on('load', function(){		
+	jQuery(window).on('load', function(){
 	    var $container = $('.minimalio-grid'),
 	      colWidth = function () {
-	        var w = $container.width(), 
+	        var w = $container.width(),
 	          columnNum = 1,
 	          columnWidth = 0;
 	        if (w > 1200) {
@@ -36,7 +36,7 @@ Table of Content
 	          columnNum  = 2;
 	        } else if (w > 450) {
 	          columnNum  = 2;
-	        } else if (w > 385) {
+	        } else if (w > 185) {
 	          columnNum  = 1;
 	        }
 	        columnWidth = Math.floor(w/columnNum);
@@ -83,7 +83,7 @@ Table of Content
 
 
   /*==============================================================
-    10.  APPEAR JS FOR SKILL DATA ANIMATION INIT 
+    10.  APPEAR JS FOR SKILL DATA ANIMATION INIT
   ================================================================*/
 	if($('.minimalio-number-percentage').exists()){
 		(function(){
@@ -151,12 +151,12 @@ Table of Content
 	            // The latitude and longitude to center the map (always required)
 	            center: new google.maps.LatLng(40.6700, -73.9400), // New York
 
-	            // How you would like to style the map. 
+	            // How you would like to style the map.
 	            // This is where you would paste any style found on Snazzy Maps.
 	            styles: [{"featureType":"administrative","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","elementType":"all","stylers":[{"saturation":-100},{"lightness":"50"},{"visibility":"simplified"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"all","stylers":[{"lightness":"30"}]},{"featureType":"road.local","elementType":"all","stylers":[{"lightness":"40"}]},{"featureType":"transit","elementType":"all","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ededed"},{"lightness":-25},{"saturation":-97}]},{"featureType":"water","elementType":"labels","stylers":[{"lightness":-25},{"saturation":-100}]}]
 	        };
 
-	        // Get the HTML DOM element that will contain your map 
+	        // Get the HTML DOM element that will contain your map
 	        // We are using a div with id="map" seen below in the <body>
 	        var mapElement = document.getElementById('minimalio-map-section');
 
@@ -172,7 +172,7 @@ Table of Content
 	    }
     	})();
 	}
-    
+
 	/*--------------------------------------------------------------
 	  Minimalio - Appear Animate INIT
 	--------------------------------------------------------------*/
@@ -220,9 +220,9 @@ Table of Content
 	if($('.minimalio-welcome-section').exists()){
 		$(".minimalio-welcome-section").owlCarousel({
 			autoPlay: 3000, //Set AutoPlay to 3 seconds
-			singleItem: true,			
+			singleItem: true,
 			navigation: false,
-			transitionStyle: "fade"		
+			transitionStyle: "fade"
 		});
 	}
 
@@ -236,23 +236,23 @@ Table of Content
 		});
 
 		 $('.minimalio-overlay-menu a').on('click', function () {
-		      
+
 	      $('html, body').animate({
-	         
+
 	          scrollTop: $('#' + $(this).data('value')).offset().top
-	         
+
 	      }, 1000);
-	      
+
 	      $('#toggle').removeClass('active');
-	      
+
 	      $('#minimalio-overlay-id').removeClass('open');
-	      
+
   		});
 	}
 
 	/* ===================================================================
     ### LavaLamp JS for minimalio-services-menus in Home & Portfolio Page
-    ====================================================================== */	  
+    ====================================================================== */
 	if($('ul.minimalio-lavalamp-darrow').exists()){
 	  $(function() {
         $('ul.minimalio-lavalamp-darrow').lavaLamp({
@@ -266,7 +266,7 @@ Table of Content
         });
       });
     }
-	  
+
 	/* ===============================================================
     ### LavaLamp JS for Catagories Items in Blog and Single-blog Pages
     ================================================================== */
@@ -293,7 +293,7 @@ Table of Content
 
 
     /* ====================================================
-    ###  Magnific JS for Lightbox PopUp in minimalio-grid 
+    ###  Magnific JS for Lightbox PopUp in minimalio-grid
     ======================================================= */
     if($('.minimalio-img-container').exists()){
 	  $('.minimalio-img-container').magnificPopup({
@@ -326,7 +326,7 @@ Table of Content
 	/* ====================================================
     ###  Synced OwlCarosel JS for minimalio-ceo-description
     ======================================================= */
-	  
+
 	  var sync1 = $("#sync1");
 	  var sync2 = $("#sync2");
 	 	if(sync1.length > 0 && sync2.length > 0){
@@ -335,7 +335,7 @@ Table of Content
 		    slideSpeed : 1000,
 		    afterAction : syncPosition
 		  });
-		 
+
 		  sync2.owlCarousel({
 		    items : 3,
 		    itemsDesktop      : [1199,3],
@@ -348,7 +348,7 @@ Table of Content
   	/* ============================================
     ###  Custom Navigation Events with Owl Carousal
     =============================================== */
-	   
+
 	 if($('.minimalio-img-container a').exists()){
 	   $(".minimali-next-nav").on('click',function(e){
 	  	 e.preventDefault();
@@ -362,7 +362,7 @@ Table of Content
 	     sync1.trigger('owl.prev');
 	   })
 	 }
-	 
+
 	 //========= End Custom Navigation Events with Owl Carousal ==========//
 	  function syncPosition(el){
 	    var current = this.currentItem;
@@ -375,13 +375,13 @@ Table of Content
 	      center(current)
 	    }
 	  }
-	 
+
 	  $("#sync2").on("click", ".owl-item", function(e){
 	    e.preventDefault();
 	    var number = $(this).data("owlItem");
 	    sync1.trigger("owl.goTo",number);
 	  });
-	 
+
 	  function center(number){
 	    var sync2visible = sync2.data("owlCarousel").owl.visibleItems;
 	    var num = number;
@@ -391,7 +391,7 @@ Table of Content
 	        var found = true;
 	      }
 	    }
-	 
+
 	    if(found===false){
 	      if(num>sync2visible[sync2visible.length-1]){
 	        sync2.trigger("owl.goTo", num - sync2visible.length+2)
@@ -410,8 +410,8 @@ Table of Content
 	//========== End Synced OwlCarosel JS =============//
 
 	/* ============================================
-    ###  Classie JS for Minimal Form 
-    =============================================== */	  
+    ###  Classie JS for Minimal Form
+    =============================================== */
 	  if($('#minimalio-contact-form').exists()){
 	  var minimalio_contact_form = document.getElementById( 'minimalio-contact-form' );
 
