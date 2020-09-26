@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>{{$title}}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
     <script src="https://use.fontawesome.com/6090a72a09.js"></script>
     <!-- favicon Images -->
     <link rel="icon" href="img/favicon/favicon.ico">
