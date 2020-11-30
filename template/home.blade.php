@@ -8,11 +8,11 @@
 		<link rel="icon" href="img/favicon/favicon.ico">
         <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
         <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">		
+        <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
 		<!-- bootstrap css -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<!-- google Fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:600i%7CPoppins:300,400,500,600%7CRoboto:100,400" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:600i%7CPoppins:300,400,500,600%7CRoboto:100,400" rel="stylesheet">
 		<!-- ionicons css -->
 		<link rel="stylesheet" href="css/ionicons.min.css">
 		<!-- magnific Popup css -->
@@ -20,11 +20,11 @@
 		<!-- font Awesome css -->
 		<link rel="stylesheet" href="css/font-awesome.min.css">
 		<!-- owl carousel css -->
-		<link rel="stylesheet" href="css/owl.carousel.css">		
+		<link rel="stylesheet" href="css/owl.carousel.css">
 		<!-- normalize css -->
-		<link rel="stylesheet" type="text/css" href="css/normalize.css" />		
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<!-- component css -->
-		<link rel="stylesheet" type="text/css" href="css/component.css" />		
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
 		<!-- main css -->
 		<link rel="stylesheet" href="style.css">
 		<!-- responsive css -->
@@ -34,7 +34,7 @@
 	</head>
 	<body class="minimalio-indx-2">
 		<!-- start minimalio-header-with-hero-section -->
-        <div class="minimalio-header-with-hero-section">			
+        <div class="minimalio-header-with-hero-section">
 			<!-- start minimalio-header-section -->
 			<header id="home" class="minimalio-header-section">
 				<div class="container">
@@ -42,7 +42,7 @@
 						<div class="minimalio-header">
 							<!-- minimalio Header Logo -->
 							<div class="col-md-4 col-sm-4 col-xs-6">
-								<div class="minimalio-logo">						
+								<div class="minimalio-logo">
 									<a href="home.blade.php">
 										<img src="img/logo-new.png" alt="Logo Image">
 									</a>
@@ -50,7 +50,7 @@
 							</div> <!-- end minimalio Header Logo -->
 
 							<!-- minimalio Header Menu -->
-							<div class="col-md-8 col-sm-8 col-xs-6">					
+							<div class="col-md-8 col-sm-8 col-xs-6">
 								<div class="minimalio-menu-section">
 					                <div class="minimalio-menu">
 					                    <div class="minimalio-nav-icon" id="toggle">
@@ -58,7 +58,7 @@
 						                    <span></span>
 						                    <span></span>
 					                    </div>
-					                </div> <!-- end minimalio-menu --> 
+					                </div> <!-- end minimalio-menu -->
 
 					                <div class="minimalio-overlay" id="minimalio-overlay-id">
 					                    <nav class="minimalio-overlay-menu">
@@ -71,13 +71,13 @@
 											</ul>
 					                    </nav>	<!-- end minimalio-overlay-menu -->
 					                </div> <!-- end minimalio-overlay-menu -->
-				            	</div> 	<!-- end minimalio-menu-section -->			
+				            	</div> 	<!-- end minimalio-menu-section -->
 							</div> <!-- end minimalio header menu -->
 						</div><!-- end minimalio-contact-header -->
 					</div>	<!-- end row -->
 				</div> <!-- end container -->
 			</header> <!-- end minimalio-header-section -->
-		
+
 			<!-- start minimalio-hero-section -->
 			<section class="minimalio-hero-section">
 
@@ -122,11 +122,11 @@
 
 			</section> <!-- end minimalio-hero-section -->
 		</div>
-		
+
 		<!-- start minimalio-services-section -->
 		<div id="work" class="minimalio-services-section">
 			<div class="minimalio-services-menus">
-				<div class="container">				
+				<div class="container">
 					<ul class="minimalio-lavalamp-darrow">
 						<li class="minimalio-arrow-down"><a href="#" data-filter="*">All</a></li>
 						<li class="minimalio-arrow-down"><a href="#" data-filter=".minimalio-uiux">Ui&UX</a></li>
@@ -136,7 +136,7 @@
 					</ul> <!-- end minimalio-lavalamp-darrow -->
 				</div> <!-- end container -->
 			</div>	<!-- end minimalio-services-menus -->
-			
+
 			<!-- start minimalio-services-content -->
 			<div class="minimalio-services-content">
 				<div class="container-fluid">
@@ -171,7 +171,7 @@
 						  <div class="minimalio-grid-item minimalio-flyer minimalio-graphics">
 						  	<div class="minimalio-img-container minimalio-new-service-item">
 					  			<img src="http://via.placeholder.com/570x410" alt="Mock Design Image">
-					  			<a href="http://via.placeholder.com/570x410">				  				
+					  			<a href="http://via.placeholder.com/570x410">
 							  		<div class="minimalio-hover-overlay">
 							  			<div class="minimalio-hover">
 							  				<span>+</span>
@@ -229,7 +229,7 @@
 							  				<span>+</span>
 							  				<p>UI&amp;UX DESIGN</p>
 							  			</div>
-							  		</div>			
+							  		</div>
 						  		</a>
 					  		</div>
 						  </div>
@@ -292,7 +292,7 @@
 				</div>
 			</div> <!-- end minimalio-services-content -->
 		</div> <!-- end minimalio-services-section -->
-		
+
 		<!-- start minimalio-counting-section -->
 		<div class="minimalio-counting-section">
 			<div class="container">
@@ -337,7 +337,7 @@
 				</div>
 			</div>
 		</div> <!-- end minimalio-counting-section -->
-		
+
 		<!-- start minimalio-my-latest-blog -->
 		<section class="minimalio-my-latest-blog">
 			<div class="container">
@@ -364,7 +364,7 @@
 						</div>
 						<div class="minimalio-latest-blog-readmore">
 							<a href="#">Read more <i class="ion-ios-arrow-thin-right"></i></a>
-						</div>						
+						</div>
 					</div>
 					<div class="col-md-4">
 						<img src="http://via.placeholder.com/370x200" alt="blog image">
@@ -384,7 +384,7 @@
 						</div>
 						<div class="minimalio-latest-blog-readmore">
 							<a href="#">Read more <i class="ion-ios-arrow-thin-right"></i></a>
-						</div>						
+						</div>
 					</div>
 					<div class="col-md-4">
 						<img src="http://via.placeholder.com/370x200" alt="blog image">
@@ -404,7 +404,7 @@
 						</div>
 						<div class="minimalio-latest-blog-readmore">
 							<a href="#">Read more <i class="ion-ios-arrow-thin-right"></i></a>
-						</div>						
+						</div>
 					</div>
 				</div>
 			</div>
@@ -506,14 +506,14 @@
 
 						    </div> <!-- end sync1 -->
 						</div> <!-- end minimalio-ceo-details-section -->
-					</div> <!-- end minimalio-ceo-descriptions -->		
+					</div> <!-- end minimalio-ceo-descriptions -->
 				</div> <!-- end row -->
 			</div>	<!-- end container -->
 		</section> <!-- end minimalio-ceo-section -->
-			
+
 		<!-- start minimalio-hire-me-section  -->
 		<section id="hire-me" class="minimalio-hire-me-section">
-			<div class="container">	
+			<div class="container">
 				<div class="row">
 					<div class="minimalio-hire-me">
 						<div class="col-md-4 col-md-offset-1 col-sm-4 col-xs-6 minimalio-hire-me-content">
@@ -524,9 +524,9 @@
 						</div>
 					</div> <!-- end minimalio-hire-me -->
 				</div>	<!-- end row -->
-			</div> <!-- end container -->	
+			</div> <!-- end container -->
 		</section>	<!-- end minimalio-hire-me-section -->
-		
+
 		<!-- start minimalio-footer-section -->
 		<footer class="minimalio-footer-section">
 			<div class="minimalio-footer-arrow-down"></div> <!-- Start and end footer-arrow-down -->

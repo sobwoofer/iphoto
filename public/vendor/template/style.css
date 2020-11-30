@@ -116,7 +116,18 @@ input{
 
 .minimalio-logo{
     display: inline-block;
-    width: 130px;
+    width: 255px;
+    margin-top: -66px;
+    float: left;
+    margin-left: -32px;
+}
+
+#iam {
+    float: left;
+    width: 187px;
+    margin-top: -30px;
+    border-radius: 90px;
+    overflow: hidden;
 }
 
 /* -----------------------------------------------------------------
@@ -524,6 +535,7 @@ input{
 
 .minimalio-single-welcome-section{
     color: #333333;
+    margin-top: 88px;
 }
 
 .minimalio-single-welcome-section h1{
@@ -762,7 +774,7 @@ body.minimalio-indx-2 #minimalio-hero-slide .owl-item.active .minimalio-hero-sli
   4.2 - MiniMalio - minimalio-services-content
 ------------------------------------------------------------------*/
 .minimalio-services-content{
-    padding-top: 80px;
+    /*padding-top: 80px;*/
     position: relative;
     padding-bottom: 80px;
 }
@@ -1751,7 +1763,7 @@ width: 33.33%;
   12.MiniMalio - Contact Page CSS
 ------------------------------------------------------------------*/
 .minimalio-contact-header-section{
-    padding-top: 15px;
+    padding-top: 50px;
     min-height: 14em;
     background-image: url(http://via.placeholder.com/1600x330);
     background-position: center center;

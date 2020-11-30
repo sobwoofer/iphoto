@@ -11,7 +11,7 @@ $sectionClass = !isset($pageName) ? 'minimalio-header-section' : "minimalio-cont
         <div class="row">
             <div class="minimalio-header">
                 <!-- minimalio Header Logo -->
-                <div class="col-md-4 float-left col-sm-4 col-6">
+                <div class="col-md-10 float-left col-sm-10 col-10">
                     <div class="minimalio-logo">
                         @if(isset($pageName))
                             <a href="/">
@@ -22,12 +22,14 @@ $sectionClass = !isset($pageName) ? 'minimalio-header-section' : "minimalio-cont
                                 <img src="/vendor/template/image/logo.png" alt="Logo Image">
                             </a>
                         @endif
-
                     </div>	<!-- end minimalio-logo -->
+                    <div id="iam">
+                        <img title="Тетяна Чугунова Весільний і сімейний фотограф" src="/vendor/template/image/iam.jpg">
+                    </div>
                 </div> <!-- end minimalio Header Logo -->
 
                 <!-- minimalio Header Menu -->
-                <div class="col-md-8 float-right col-sm-8 col-6">
+                <div class="col-md-2 float-right col-sm-2 col-2">
                     <div class="minimalio-menu-section">
                         <div class="minimalio-menu">
                             <div class="minimalio-nav-icon" id="toggle">

@@ -14,7 +14,7 @@ class AboutController extends Controller
     public function index()
     {
         return view('template.about', [
-            'pageTitle' => 'About',
+            'pageTitle' => 'Про мене',
         ]);
     }
 

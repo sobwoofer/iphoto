@@ -11,6 +11,11 @@
 				<div class="row">
 					<div class="col-md-6 col-sm-6 col-xs-12">
 						<div class="minimalio-about-ones-details">
+							<img title="{{$pageTitle}}" src="/vendor/template/image/about.jpg">
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<div class="minimalio-about-ones-details">
 							<div class="minimalio-about-ones-title">
 								<h2>Hi I'm Steve Smith</h2>
 								<h3>Web UI & UX DESIGNER</h3>
